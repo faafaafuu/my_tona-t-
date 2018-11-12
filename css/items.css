@@ -1,0 +1,39 @@
+.apple {
+    width: 2.5%;
+    top: 28%;
+    left: 97.9%;
+    position: absolute;
+    cursor: pointer;
+    z-index: -1;
+    transform: rotate(-25deg);
+}
+
+.mirror {
+    cursor: pointer !important; 
+    width: 6%;
+    position: absolute;
+    top: 31.9%;
+    left: 18.8%;
+    z-index: -1;
+    overflow: hidden; 
+}
+
+.comb {
+    width: 3%;
+    position: absolute;
+    bottom: 23.5%;
+    right: 20.6%;
+    z-index: 1;
+    cursor: pointer;
+    transform: rotate(-74deg);
+}
+
+.perfume {
+    transform: rotate(-34deg);
+    position: absolute;
+    z-index: -1;
+    cursor: pointer;
+    width: 7%;
+    top: 56.5%;
+    left: 26.9%
+}

@@ -1,6 +1,7 @@
-* {
-    box-sizing: border-box;
-   }
+* {box-sizing: border-box;
+    padding: 0%;
+
+}
 
 html {
     min-width: 700px;
@@ -9,6 +10,7 @@ html {
 body {
 padding: 3rem;
 background: #000000f3;
+margin: 0;
 
 }
 /* Обертка в релэйшены для адаптивности фона*/
@@ -41,16 +43,15 @@ background: #000000f3;
 
 .Tutorial1 {
     width: 100%;
-    height: 100%;
+    padding: 0%;
 }
 
 .tutorialBlock {
-    margin-top: 8%;
-    position: relative;
+    position: absolute;
     justify-self: center;
     width: 32%;
-    height: 25%;
-    margin-bottom: 34%;
+    margin-top: -20%;
+    
 }
 
 .playground p {
@@ -68,16 +69,13 @@ background: #000000f3;
 } */
 
 .hoGui {
-    position: relative;
-
+    position: absolute;
     width: 68%;
-    height: 14%;
-    margin-bottom: 5.8%;
 }
 
 .hoGui img {
     width: 100%;
-    height: 100%;
+    margin-bottom: -82%;
 }
 
 .hoGui ul li {
@@ -90,8 +88,8 @@ background: #000000f3;
     display: inline-block;
     display: flex;
     justify-content: space-around;
-    margin-top: -5%;
     cursor: pointer;
+    margin-top: 76.5%;
 }
 
 

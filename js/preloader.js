@@ -2,7 +2,7 @@
   var pageloader = document.querySelector('#pageloader');
   var loaderIcon = pageloader.querySelector('.pageloader-icon');
 
-  /* begin Centering Load Icon */
+  /* начало центрирования */
   function modalCentering(loaderIcon) {
     var modal = loaderIcon;
     modal.style.top = document.documentElement.clientHeight / 2 + window.pageYOffset - modal.offsetHeight / 2 + 'px';
@@ -14,7 +14,7 @@
     });
   }
   modalCentering(loaderIcon);
-  /* end Centering Load Icon */
+  /* конец центрирования */
 
   window.addEventListener('load', function() {
     var counter = 1;

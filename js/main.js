@@ -2,27 +2,28 @@
 
     const items = document.querySelectorAll('.item');
     const listItems = document.querySelectorAll('li')
-    
+
+    // Удаляет предмет
     items.forEach((e) => {
-        e.addEventListener('click', (e) => {
+        e.addEventListener('click', (e) => {    
             const item = e.target
-           if(item.classList.contains('item')) {
-            console.log(item.classList)
-            item.classList.add('found')
-            item.style.opacity = '0';
-        
-                for (let i = 0; i < listItems.length; i++) {
-                    if(item.classList.contains(listItems[i].textContent)){
-                        listItems[i].classList.add('listFound')
-                    }   
-                }
+
+            if(item.classList.contains('item')) {
+                item.classList.add('found')
+                item.style.opacity = '0';
+
+                getMatch(item)
             }
         })
     })
 
-    // function getMatch(a) {
-    //     const  liMatch = listItems.filter(function(e) { e.textContent == a.classList.contains('e')});
-    //     console.log(liMatch)
-    //     return liMatch;
-    // }
+    // Находит предмет в списке
+    function getMatch(it) {
+        for (let i = 0; i < listItems.length; i++) {
+                    
+            if(it.classList.contains(listItems[i].textContent)){
+                return listItems[i].classList.add('listFound')
+            }   
+        }
+    }
 })

@@ -76,13 +76,42 @@ margin: 0;
 .hoGui img {
     width: 100%;
     margin-bottom: -82%;
+
 }
 
 .hoGui ul li {
     color: #4f0101;
-    font-size: 2vw;   
+    font-size: 1.5vw;   
     list-style-type: none;
+    text-transform: uppercase
 }
+
+.listFound {
+    text-decoration: line-through;
+    animation: shake 0.5s; 
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.found {
+    /* text-decoration: line-through; */
+    opacity: 1;
+    transition: all ease 1s;
+}
+
+
 
 .hoGui ul {
     display: inline-block;
@@ -91,6 +120,7 @@ margin: 0;
     cursor: pointer;
     margin-top: 76.5%;
 }
+
 
 
 /* make media for items list*/

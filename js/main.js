@@ -1,29 +1,55 @@
-(window.onload = function (){ 
 
-    const items = document.querySelectorAll('.item');
-    const listItems = document.querySelectorAll('li')
 
-    // Удаляет предмет
-    items.forEach((e) => {
-        e.addEventListener('click', (e) => {    
-            const item = e.target
+const nodes = document.querySelectorAll('.item');
+let items = Array.prototype.slice.call(nodes); // преобразует NodeList из айтимов в Array
+const listItems = document.querySelectorAll('li');
+const list = document.querySelector('ul')
 
-            if(item.classList.contains('item')) {
-                item.classList.add('found')
-                item.style.opacity = '0';
-
-                getMatch(item)
-            }
-        })
+items.forEach((e) => {
+        
+    e.addEventListener('click', (e) => { 
+        console.log(e)
+        const item = e.target
+        removeItem(item)
     })
-
-    // Находит предмет в списке
-    function getMatch(it) {
-        for (let i = 0; i < listItems.length; i++) {
-                    
-            if(it.classList.contains(listItems[i].textContent)){
-                return listItems[i].classList.add('listFound')
-            }   
-        }
-    }
 })
+
+// Удаляет предмет
+function removeItem(it) {
+    if(it.classList.contains('item')) {
+        it.classList.add('found')
+        it.style.opacity = '0';
+        setTimeout(() => {return it.parentNode.removeChild(it)}, 700)
+        getMatch(it)
+        tooltip();
+        items.shift()
+    }
+    return tooltip();
+}
+
+// Находит предмет в списке
+function getMatch(it) {
+    for (let i = 0; i < listItems.length; i++) {
+                
+        if(it.classList.contains(listItems[i].textContent)){
+            return listItems[i].classList.add('listFound')
+        }   
+    }
+}
+
+// Подсказка( подсвечивает элемент)
+function tooltip() {
+    for(let i = 0; i < items.length; i++) {
+        if(i == 0) {
+            if(!items[i].classList.contains('found')) {
+                setTimeout(() => {
+                    items[i].classList.add('tooltip')
+                }, 5000);
+            }  
+        }  
+    }
+}
+
+tooltip()
+
+

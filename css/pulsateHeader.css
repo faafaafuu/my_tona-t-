@@ -1,14 +1,14 @@
-@-webkit-keyframes pulsate { 50% { color: #fff;
-    text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
- } 
-} 
-@keyframes pulsate { 
-    50% { color: #fff; 
-        text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
-     }
- } 
- .blink { 
-     color: rgb(245,245,245); 
-    text-shadow: 0 -1px rgba(0,0,0,.1); 
-    -webkit-animation: pulsate 2s linear infinite; 
-    animation: pulsate 2s linear infinite; }
+.blink {
+  -webkit-animation: blink 3s linear infinite;
+  animation: blink 3s linear infinite;
+}
+@-webkit-keyframes blink {
+  0% { color: rgb(128, 0, 0); }
+  50% { color: rgba(183, 65, 14, 0.486); }
+  100% { color: rgb(128, 0, 0); }
+}
+@keyframes blink {
+  0% { color: rgb(128, 0, 0); }
+  50% { color: rgba(184, 123, 123, 0.904); }
+  100% { color: rgb(128, 0, 0); }
+}

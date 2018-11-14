@@ -1,0 +1,54 @@
+
+
+.freePlay {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.freePlay img {
+    position: absolute;
+    width: 60%;
+    margin-top: -16%;
+}
+
+.freePlay button:hover {
+    color: rgba(255, 96, 23, 0.87);
+}
+
+.freePlay button {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+    }
+      
+    @-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    
+    to {
+        -webkit-mask-position: -20%;
+    }
+}
+.freePlay button {
+    border: none;
+    position: absolute;
+    background: url('../img/items/button.png');
+    background-size: 100%;
+    width: 30%;
+    height: 13%;
+    z-index: 1000;
+    margin-top: -25%;
+
+    color: #4f0101;
+    font-size: 2.7vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}

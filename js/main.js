@@ -8,7 +8,6 @@ const list = document.querySelector('ul')
 items.forEach((e) => {
         
     e.addEventListener('click', (e) => { 
-        console.log(e)
         const item = e.target
         removeItem(item)
     })
@@ -24,6 +23,7 @@ function removeItem(it) {
         tooltip();
         items.shift()
     }
+    console.log(items.length)
     return tooltip();
 }
 
@@ -39,17 +39,37 @@ function getMatch(it) {
 
 // Подсказка( подсвечивает элемент)
 function tooltip() {
-    for(let i = 0; i < items.length; i++) {
-        if(i == 0) {
-            if(!items[i].classList.contains('found')) {
-                setTimeout(() => {
-                    items[i].classList.add('tooltip')
-                }, 5000);
+    for(let i = 0; i <= items.length; i++) {
+        if(items.length){
+            if(i == 0) {
+                if(!items[i].classList.contains('found')) {
+                    setTimeout(() => {
+                        items[i].classList.add('tooltip')
+                    }, 5000);
+                }
             }  
-        }  
+        }
+        else{
+            gameOver()
+        }
     }
 }
 
 tooltip()
 
+//Конец игры
+function gameOver() {
+    const rel = document.querySelector('.rel')
+    const freePlay = document.querySelector('.freePlay')
+    const tutorialBlock = document.querySelector('.tutorialBlock')
+    // const headerText = document.querySelector('.blink')
+    // headerText.classList.remove('blink')
+    // headerText.classList.toggle('blinkAfterWin')
+    // headerText.textContent = 'congratulations you win!'
+    tutorialBlock.style.display = 'none';
+    freePlay.style.display = 'flex';
+    rel.style.display = 'none';
 
+
+}
+// gameOver()
